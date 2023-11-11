@@ -1,0 +1,98 @@
+<header class="section-header">
+  <section class="header-main border-bottom">
+    <div class="container">
+
+      <div class="row align-items-center">
+        <div class="col-xl-2 col-lg-3 col-md-12">
+          <a href="#" class="brand-wrap">Bike Bliss</a>
+        </div>
+
+        <div class="col-xl-6 col-lg-5 col-md-6">
+          <app-search-form></app-search-form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <app-nav-bar></app-nav-bar>
+</header>
+
+
+<div class="container">
+
+  <!-- Section main -->
+  <section class="section-main bg padding-y">
+    <main class="card">
+      <div class="card-body">
+        <div class="row">
+          <aside class="col-lg col-md-3 flex-lg-grow-0">
+            <app-menu-category></app-menu-category>
+          </aside> <!-- col.// -->
+
+          <div class="col-md-9 col-xl-7 col-lg-7">
+            <app-carousel-slider></app-carousel-slider>
+          </div> <!-- col.// -->
+
+          <div class="col-md d-none d-lg-block flex-grow-1">
+            <app-popular-category></app-popular-category>
+          </div> <!-- col.// -->
+        </div> <!-- row.// -->
+
+      </div> <!-- card-body.// -->
+    </main> <!-- card.// -->
+  </section>
+  <section class="padding-bottom-sm">
+
+    <header class="section-heading heading-line">
+      <h4 class="title-section text-uppercase">Recherchez les produits par catégorie et marque </h4>
+    </header>
+    <div class="filter-container">
+      <label for="category">Catégorie:</label>
+      <select id="category" [(ngModel)]="selectedCategory">
+        <option *ngFor="let category of categories" [value]="category.id">{{ category.nom }}</option>
+      </select>
+    </div>
+    <div class="filter-container">
+      <label for="brand">Marque:</label>
+      <select id="brand" [(ngModel)]="selectedBrand">
+        <option *ngFor="let brand of marques" [value]="brand.id">{{ brand.nom }}</option>
+      </select>
+    </div>
+    <button class="filter-button" (click)="getProducts()">Afficher les produits</button>
+
+    <!-- Affichage des produits -->
+    <div *ngIf="products && products.length > 0">
+      <h2>Produits:</h2>
+      <ul class="product-list">
+        <li *ngFor="let product of products" class="product-item">
+          <div class="product-details">
+            <span class="product-name">{{ product.nom }}</span>
+            <span class="product-price" style="margin-left: 5px">{{ product.prix_depart }} €</span>
+          </div>
+          <button (click)="openProductDetails(product)" class="command-button">
+            {{ product.commande ? 'Annuler' : 'Commander' }}
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="products && products.length === 0">
+      <p class="no-products">Aucun produit trouvé.</p>
+    </div>
+  </section>
+
+
+  <app-recommended-items></app-recommended-items>
+
+  <app-trade-services></app-trade-services>
+
+</div> <!-- container end.// -->
+
+<!-- <app-download-demo></app-download-demo> -->
+
+<app-footer></app-footer>
+
+
+
+
+

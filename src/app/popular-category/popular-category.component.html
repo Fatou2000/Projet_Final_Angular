@@ -1,0 +1,8 @@
+<aside class="special-home-right">
+  <h6 class="bg-blue text-center text-white mb-0 p-2">Nos marques</h6>
+  <ul class="menu-category mt-3" >
+    <li *ngFor="let marque of marques">
+      <a [routerLink]="['/marques', marque.id]">{{ marque.nom }}</a>
+    </li>
+  </ul>
+</aside>

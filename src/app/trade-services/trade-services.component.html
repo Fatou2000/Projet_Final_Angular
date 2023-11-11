@@ -1,0 +1,24 @@
+<section class="padding-bottom">
+
+  <header class="section-heading heading-line">
+    <h4 class="title-section text-uppercase">Nos magasins</h4>
+  </header>
+
+  <div class="row">
+
+    <div class="col-md-3 col-sm-6" *ngFor="let m of magasins">
+      <article class="card card-post">
+        <img src="assets/images/magasin.jpg" class="card-img-top">
+        <div class="card-body">
+          <h6 class="title">{{m.nom}}</h6>
+          <p class="small text-uppercase text-muted">Adresse: {{m.adresse}}</p>
+          <p class="small text-uppercase text-muted">Telephone: {{m.telephone}}</p>
+          <p class="small text-uppercase text-muted">Email: {{m.email}}</p>
+          <p class="small text-uppercase text-muted">Ville: {{m.ville}}</p>
+        </div>
+      </article> <!-- card.// -->
+    </div> <!-- col.// -->
+
+  </div> <!-- row.// -->
+
+</section>

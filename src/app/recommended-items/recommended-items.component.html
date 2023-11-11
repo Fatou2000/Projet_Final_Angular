@@ -1,0 +1,20 @@
+<section class="padding-bottom-sm">
+
+  <header class="section-heading heading-line">
+    <h4 class="title-section text-uppercase">Recommandations</h4>
+  </header>
+
+  <div class="row row-sm">
+    <div class="col-xl-2 col-lg-3 col-md-4 col-6" *ngFor="let p of produits">
+      <div class="card card-sm card-product-grid">
+        <a href="#" class="img-wrap"><button class="centered-button">Tapez pour voir</button> </a>
+
+        <figcaption class="info-wrap">
+          <a href="#" class="title">{{p.nom}}</a>
+          <div class="price mt-1">${{p.prix_depart}}</div> <!-- price-wrap.// -->
+        </figcaption>
+      </div>
+    </div> <!-- col.// -->
+
+  </div> <!-- row.// -->
+</section>

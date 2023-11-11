@@ -1,0 +1,35 @@
+<header class="section-header">
+  <section class="header-main border-bottom">
+    <div class="container">
+
+      <div class="row align-items-center">
+        <div class="col-xl-2 col-lg-3 col-md-12">
+          <a href="#" class="brand-wrap">Bike Bliss</a>
+        </div>
+
+        <div class="col-xl-6 col-lg-5 col-md-6">
+          <app-search-form></app-search-form>
+        </div>
+
+        <div class="col-xl-4 col-lg-4 col-md-6">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <app-nav-bar></app-nav-bar>
+</header>
+<h3 class="p-3 text-center text-muted">Les produits de la catégorie <strong *ngIf="categorie.nom">{{categorie.nom}}</strong></h3>
+<div class="container" style="font-family: sans-serif;color: #7d7d7d;">
+  <ul class="product-list">
+    <li *ngFor="let product of produits" class="product-item">
+      <div class="product-details">
+        <span class="product-name">{{ product.nom }}</span>
+        <span class="product-price" style="margin-left: 10px">{{ product.prix_depart }} €</span>
+      </div>
+      <button mat-button (click)="openProductDetails(product)" class="command-button">
+        {{ product.commande ? 'Annuler' : 'Commander' }}
+      </button>
+    </li>
+  </ul>
+</div>

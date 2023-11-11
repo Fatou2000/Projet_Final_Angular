@@ -1,0 +1,11 @@
+<h1 class="product-title">Détails du produit</h1>
+<div class="product-details">
+  <p><strong>Nom du produit :</strong> {{ data.nom }}</p>
+  <p><strong>Prix du produit :</strong> {{ data.prix_depart }} €</p>
+  <p><strong>Annee du modèle :</strong> {{ data.annee_model }} </p>
+  <p><strong>Categorie :</strong> {{ data.categorieId.nom }} </p>
+  <p><strong>Marque :</strong> {{ data.marqueId.nom }} </p>
+  <!-- Ajoutez d'autres détails du produit ici -->
+  <button class="button"(click)="redirectToCommandePage(data.id)">Order Now</button>
+  <button class="close-button" (click)="closeDialog()">Fermer</button>
+</div>

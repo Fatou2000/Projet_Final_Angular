@@ -1,0 +1,8 @@
+<nav class="nav-home-aside">
+  <h6 class="title-category">CATEGORIES<i class="d-md-none icon fa fa-chevron-down"></i></h6>
+  <ul class="menu-category" >
+    <li *ngFor="let item of categories">
+      <a [routerLink]="['/categories', item.id]">{{ item.nom }}</a>
+    </li>
+  </ul>
+</nav>
